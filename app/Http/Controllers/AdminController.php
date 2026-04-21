@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Shipp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AdminController extends Controller
 {
     public function adminDashboard(){
         $shippments = Shipp::all();
         $totalAmount = Shipp::sum('amount');
+        $totalUser = User::all()->count();
+        $totalShipment = Shipp::all()->count();
+        $deliveredShipments = Shipp::where('status', 'Delivered')->count();
+        // dd($totalUser, $totalAmount, $totalShipment);
 
-        return view('admin.index',compact('shippments','totalAmount'));
+        return view('admin.index',compact('shippments','totalAmount', 'totalUser','totalShipment', 'deliveredShipments'));
     }
 
     public function shippment(){

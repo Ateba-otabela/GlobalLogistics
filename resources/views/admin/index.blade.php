@@ -142,15 +142,15 @@ code{
     <div class="col-md-3">
         <div class="card-box">
             <div class="card-icon"><i class="bi bi-box-seam"></i></div>
-            <h6 class="text-muted">Pending Orders</h6>
-            <h3>{{ 6 }}</h3>
+            <h6 class="text-muted">Delivered Tracking</h6>
+            <h3>{{ $deliveredShipments }}</h3>
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="card-box">
             <div class="card-icon"><i class="bi bi-cash-stack"></i></div>
-            <h6 class="text-muted">Total Payment</h6>
+            <h6 class="text-muted">Total Profit</h6>
             <h3 class="text-success">${{ $totalAmount }}</h3>
         </div>
     </div>
@@ -158,8 +158,8 @@ code{
     <div class="col-md-3">
         <div class="card-box">
             <div class="card-icon"><i class="bi bi-geo-alt"></i></div>
-            <h6 class="text-muted">Tracking</h6>
-            <h3 class="text-info">{{ 7 }}</h3>
+            <h6 class="text-muted">Registered Tracking</h6>
+            <h3 class="text-info">{{ $totalShipment }}</h3>
         </div>
     </div>
 
@@ -167,7 +167,7 @@ code{
         <div class="card-box">
             <div class="card-icon"><i class="bi bi-people"></i></div>
             <h6 class="text-muted">Users</h6>
-            <h3 class="text-warning">{{ 7 }}</h3>
+            <h3 class="text-warning">{{ $totalUser }}</h3>
         </div>
     </div>
 
