@@ -9,27 +9,37 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function adminDashboard(){
-        $shippments = Shipp::all();
-        $totalAmount = Shipp::sum('amount');
-        $totalUser = User::all()->count();
-        $totalShipment = Shipp::all()->count();
-        $deliveredShipments = Shipp::where('status', 'Delivered')->count();
-        // dd($totalUser, $totalAmount, $totalShipment);
+  use Illuminate\Support\Facades\Auth;
 
-        return view('admin.index',compact('shippments','totalAmount', 'totalUser','totalShipment', 'deliveredShipments'));
-    }
+public function userDashboard()
+{
+    $userId = Auth::id();
 
-    public function shippment(){
-        return view('admin.shippment');
-    }
+    $shippments = Shipp::where('user_id', $userId)->get();
+
+    $totalAmount = Shipp::where('user_id', $userId)->sum('amount');
+
+    $totalShipment = Shipp::where('user_id', $userId)->count();
+
+    $deliveredShipments = Shipp::where('user_id', $userId)
+        ->where('status', 'Delivered')
+        ->count();
+
+    return view('user.index', compact(
+        'shippments',
+        'totalAmount',
+        'totalShipment',
+        'deliveredShipments'
+    ));
+}
 
     public function shipping(Request $request){
         
-     
+    
     Shipp::create([
       
            //shipper informations
+      'user_id' => Auth::id(),
       'Tracking_number' => request('trackingNumber'),
       'senders_name' => request('senders_name'),
       'company_location' => request('company_location'), 

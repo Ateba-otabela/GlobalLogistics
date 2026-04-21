@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Shipp extends Model
 {
     protected $fillable = [
         'id',
+        'user_id',
         'amount',
         'senders_name',
         'company_location',
@@ -40,4 +42,9 @@ class Shipp extends Model
         'updated_by',
         'Tracking_number'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
