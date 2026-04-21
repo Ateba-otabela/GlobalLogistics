@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/404', function () {
-//     return view('errors.404');
-// })->name('404');
+Route::get('/FAQ', function () {
+    return view('FAQ');
+})->name('FAQ');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

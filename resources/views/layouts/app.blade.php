@@ -83,6 +83,26 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
+    .accordion-button {
+  background: #fff;
+  color: #333;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #ff6600;
+  color: #fff;
+}
+
+.accordion-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+    
   </style>
 </head>
 
@@ -96,9 +116,9 @@
     <img src="{{asset('trackflow/IMG-20250707-WA0262.jpg')}}" width="60" height="60" style="border-radius:50px">
 
     <!-- Toggler -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+   <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
     <!-- Menu -->
     <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navMenu">
@@ -106,15 +126,12 @@
       <!-- LEFT LINKS -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
-            Shipping
-          </a>
+       
+          
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/404">Create Shipment</a></li>
-            <li><a class="dropdown-item" href="/404">Rates</a></li>
+            <li><a class="dropdown-item" href="/FAQ">FAQ</a></li>
           </ul>
-        </li>
+       
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
@@ -134,6 +151,10 @@
 
         <li class="nav-item">
           <a class="nav-link text-white" href="/">Track</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/FAQ">FAQ</a>
         </li>
 
       </ul>
