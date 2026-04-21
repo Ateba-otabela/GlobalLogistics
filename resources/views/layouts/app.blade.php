@@ -142,7 +142,7 @@
       <div class="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0">
 
         @guest
-        <a class="nav-link text-white" href="{{route('register')}}">Sign Up</a>
+        
         <a class="nav-link text-white" href="login">Log In</a>
         @endguest
 
