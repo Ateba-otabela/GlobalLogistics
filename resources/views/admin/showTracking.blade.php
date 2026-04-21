@@ -13,7 +13,7 @@
       margin-bottom: 1.5rem;
     }
     .fedex-purple {
-      background-color: #4d148c;
+      
       color: white;
     }
     .card-header {
