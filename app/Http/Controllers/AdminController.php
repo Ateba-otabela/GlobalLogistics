@@ -9,8 +9,11 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
+    public function shippment(){
+        return view('admin.shippment');
+}
 
-public function userDashboard()
+public function adminDashboard()
 {
     $userId = Auth::id();
 
@@ -20,17 +23,22 @@ public function userDashboard()
 
     $totalShipment = Shipp::where('user_id', $userId)->count();
 
+    $totalUser = User::all()->count();
+
     $deliveredShipments = Shipp::where('user_id', $userId)
         ->where('status', 'Delivered')
         ->count();
 
-    return view('user.index', compact(
+    return view('admin.index', compact(
         'shippments',
         'totalAmount',
         'totalShipment',
-        'deliveredShipments'
+        'deliveredShipments',
+        'totalUser'
     ));
 }
+
+
 
     public function shipping(Request $request){
         

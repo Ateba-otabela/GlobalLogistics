@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('errors.404');
+        return view('errors.403');
     }
 
     /**
