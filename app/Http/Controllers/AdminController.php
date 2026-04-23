@@ -9,7 +9,6 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
-  use Illuminate\Support\Facades\Auth;
 
 public function userDashboard()
 {
